@@ -1,0 +1,492 @@
+@media not|only mediatype and (mediafeature and|or|not mediafeature) {
+  CSS-Code;
+}
+:root {
+  --color-primary: #AAC0AF;
+  --color-secondary: #896978;
+  --color-tertiary: #F6C0D0;
+  --color-quaternary: #551a8b;
+}
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+.container-1 {
+  background-color: var(--color-primary);
+  border: .5rem solid var(--color-secondary);
+  min-height: 50rem; 
+}
+.container-2 {
+  background-color: var(--color-secondary);
+  border: .5rem solid var(--color-primary);
+  min-height: 30rem;
+  max-height: 100rem;
+}
+.container-3 {
+  background-color: var(--color-primary);
+  border: .5rem solid var(--color-secondary);
+  width: 100%;
+  min-height: 62rem;
+}
+video {
+  opacity: .5;
+}
+.myVideo {
+  width: 100%;
+min-height: 50rem;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: -43.5vh;
+  object-fit: cover;
+  -webkit-clip-path: polygon(0 0, 100% 0%, 100% 80%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0%, 100% 80%, 0% 100%);
+}
+.title {
+  text-align: center;
+  font-size: 5rem;
+  font-family: 'Overpass', sans-serif;
+  position: relative;
+  display: inline;
+  background: .5rem solid var(--color-tertiary);
+}
+.title:hover {
+  color: cadetblue;
+}
+.cb2 {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.text {
+  font-size: 3rem;
+}
+img {
+  max-width: 50rem;
+  max-height: 50rem;
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform .8s ease-in-out;
+  transition: transform .8s ease-in-out;
+  border: 2px solid white;
+}
+img:hover {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+  filter: sepia(80%);
+  transition: 2s ease-in-out;
+  border: 2px solid rgb(255, 20, 147);
+}
+.flexbox-content-2 {
+  font-size: 2.75rem;
+  text-align: center;
+  color: white;
+  font-family: 'Noto Sans TC', sans-serif;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  max-height: 80rem;
+  min-height: 20rem;
+}
+.flexbox {
+  background-image: linear-gradient(-90deg, #56424C, #839791, #AAC0AF, #FFD4CA, #EFD5C3);
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  border: .2rem;
+  max-width: 80%;
+  object-fit: cover;
+  border: .2rem solid #D16212;
+  margin-top: 10rem;
+  margin-bottom: 10%;
+  margin-left: 10%;
+  min-height: 50rem;
+}
+.flexbox:hover {
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.navigation_checkbox {
+  display: none;
+}
+.navigation_button {
+  background-color: white;
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 6rem;
+  right: 6rem;
+  z-index: 2000;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+}
+.navigation_icon {
+  position: relative;
+  margin-top: 3.5rem;
+}
+.navigation_icon::before, .navigation_icon::after {
+  content: "";
+}
+.navigation_icon::before {
+  position: absolute;
+  top: -.8rem;
+  left: 0;
+}
+.navigation_icon::after {
+  position: absolute;
+  top: .8rem;
+  left: 0;
+}
+.navigation_icon, .navigation_icon:before, .navigation_icon:after {
+  width: 3rem;
+  height: 2px;
+  background-color: #333;
+  display: inline-block;
+  transition: all .2s;
+}
+.navigation_button:hover .navigation_icon::before {
+  top: -1rem;
+}
+.navigation_button:hover .navigation_icon::after {
+  top: 1rem;
+}
+.navigation_checkbox:checked+.navigation_button .navigation_icon {
+  background-color: transparent;
+}
+.navigation_checkbox:checked+.navigation_button .navigation_icon::before {
+  transform: rotate(135deg);
+  top: 0;
+}
+.navigation_checkbox:checked+.navigation_button .navigation_icon::after {
+  transform: rotate(-135deg);
+  top: 0;
+}
+.navigation_list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+  width: 100%;
+}
+.navigation_item {
+  margin: 1rem;
+}
+.navigation_nav {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1500;
+  width: 0%;
+  opacity: 0;
+  transition: all .8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.navigation_background {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 6.5rem;
+  right: 6.5rem;
+  background-image: radial-gradient( rgba(41, 152, 255, 1), rgba(40, 180, 133, 1));
+  z-index: 1000;
+  transition: transform .8s;
+}
+.navigation_link, .navigation_link:link, .navigation_link:visited {
+  direction: inline-block;
+  font-size: 3rem;
+  font-weight: 300;
+  padding: 1rem 2rem;
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
+  background-size: 240%;
+  transition: all .4s;
+}
+.navigation_link:hover, .navigation_link:active {
+  background-position: 100%;
+  color: rgba(41, 152, 255, 1);
+  transform: translateX(1rem);
+}
+.navigation_checkbox:checked~.navigation_background {
+  transform: scale(80);
+}
+.navigation_checkbox:checked~.navigation_nav {
+  opacity: 1;
+  width: 100%;
+}
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  margin-top: 5rem;
+  display: flex;
+}
+.card-side {
+  height: 50rem;
+  width: 20%;
+  color: white;
+  backface-visibility: hidden;
+  box-shadow: 0 1.5rem 4.5rem rgba(0, 0, 0, 0.15);
+}
+.card-side-front {
+  background-color:var(--color-tertiary);
+  position: absolute;
+  /*top: 0;
+  left: 0;*/
+  z-index: 1;
+  transition: all 1s;
+}
+.card-side-back {
+  background-color: var(--color-quaternary);
+  position: absolute;
+/*  top: 0;
+  left: 0;*/
+  z-index: 0;
+  transform: rotateY(-180deg);
+  transition: all 1s;
+}
+.tickets-card:hover .card-side-front {
+  transform: rotateY(-180deg)
+}
+.tickets-card:hover .card-side-back {
+  transform: rotateY(0deg);
+}
+@-ms-viewport{
+  width: device-width;
+}
+.tickets-card {
+    display: flex;
+    position: static;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    font: 3rem solid white;
+}
+.tickets-card-1{
+    width: 33%;
+}
+.tickets-card-2{
+    width: 33%;
+}
+
+.tickets-card-3{
+    width: 33%;
+}
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "okay hello";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+
+}
+@media only screen 
+  and (min-device-width: 834px) 
+  and (max-device-width: 1112px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* Portrait */
+/* Declare the same value for min- and max-width to avoid colliding with desktops */
+/* Source: https://medium.com/connect-the-dots/css-media-queries-for-ipad-pro-8cad10e17106*/
+@media only screen 
+  and (min-device-width: 834px) 
+  and (max-device-width: 834px) 
+  and (orientation: portrait) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+}
+
+/* ----------- Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) { 
+}
+
+@media only screen and (max-width: 1700px) {
+  img {
+    display:none;
+      width:0;
+  }
+    flexbox {
+        width:100%;
+        margin: auto;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: auto; 
+        margin-top: auto;
+    }
+    flexbox-content-2 {
+        justify-content: center;
+        object-fit: cover;   xxz
+    }
+    container-2 {
+        height:62.5rem;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .card{
+    flex-direction: column;
+    max-height:10rem;
+    }
+    .tickets-card-1{
+   width 66%;
+    }
+      .tickets-card-2{
+    width: 66%;
+    }
+      .tickets-card-3{
+    width: 66%;
+    }
+    .container-1 {
+    min-height: 50rem;
+    max-height: 60rem;
+    }
+}
+.modal-window {
+  position: fixed;
+  background-color: rgba(200, 200, 200, 0.75);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.modal-window:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-window>div {
+  width: 75%;
+  position: relative;
+  margin: 10% auto;
+  padding: 2rem;
+  background: #fff;
+  color: #444;
+  border-radius: 5%;
+  min-height: 20rem;
+  text-align: center;
+}
+
+.modal-window header {
+  font-weight: bold;
+}
+
+.modal-close {
+  color: #aaa;
+  line-height: 5rem;
+  font-size:80%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 7rem;
+  text-decoration: none;
+}
+
+.modal-close:hover {
+  color: #000;
+}
+
+.modal-window h1 {
+  font-size: 3rem;
+  margin: 0 0 1.5rem;
+  color: red;
+}
+.modal-click{
+    font: 3rem solid white;
+    text-align: center;
+}
